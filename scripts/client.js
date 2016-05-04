@@ -3,13 +3,20 @@ var remote = require('remote');
 /*  Side-nav Controls   */
 $('#connection-menu').click(function(){
     var viewDataNav = $('#view-data-side-nav');
+    var enterDataNav = $('#enter-data-side-nav');
     var connNav = $('#connection-side-nav');
     var activeData = viewDataNav.hasClass('in-right');
+    var activeEnterData = enterDataNav.hasClass('in-right');
     var activeConn = connNav.hasClass('in-right');
 
     if(activeData == true){
         viewDataNav.removeClass('in-right');
         viewDataNav.addClass('out-right');
+        setTimeout(function(){connNav.addClass('in-right');}, 250);
+    }
+    else if(activeEnterData == true){
+        enterDataNav.removeClass('in-right');
+        enterDataNav.addClass('out-right');
         setTimeout(function(){connNav.addClass('in-right');}, 250);
     }
     else if(activeConn == true){
