@@ -1,13 +1,15 @@
+var remote = require('remote');
+
 /*  Side-nav Controls   */
 $('#connection-menu').click(function(){
-    var dataNav = $('#data-side-nav');
+    var viewDataNav = $('#view-data-side-nav');
     var connNav = $('#connection-side-nav');
-    var activeData = dataNav.hasClass('in-right');
+    var activeData = viewDataNav.hasClass('in-right');
     var activeConn = connNav.hasClass('in-right');
 
     if(activeData == true){
-        dataNav.removeClass('in-right');
-        dataNav.addClass('out-right');
+        viewDataNav.removeClass('in-right');
+        viewDataNav.addClass('out-right');
         setTimeout(function(){connNav.addClass('in-right');}, 250);
     }
     else if(activeConn == true){
@@ -19,8 +21,28 @@ $('#connection-menu').click(function(){
     }
 });
 
-$('#data-menu').click(function(){
-    var dataNav = $('#data-side-nav');
+function expandViewData(){
+    var viewDataNav = $('#view-data-side-nav');
+    var connNav = $('#connection-side-nav');
+    var activeData = viewDataNav.hasClass('in-right');
+    var activeConn = connNav.hasClass('in-right');
+
+    if(activeConn == true){
+        connNav.removeClass('in-right');
+        connNav.addClass('out-right');
+        setTimeout(function(){viewDataNav.addClass('in-right');}, 250);
+    }
+    else if(activeData == true){
+        viewDataNav.removeClass('in-right');
+        viewDataNav.addClass('out-right');
+    }
+    else{
+        viewDataNav.addClass('in-right');
+    }
+}
+
+function expandEnterData(){
+    var viewDataNav = $('#view-data-side-nav');
     var connNav = $('#connection-side-nav');
     var activeData = dataNav.hasClass('in-right');
     var activeConn = connNav.hasClass('in-right');
@@ -28,16 +50,34 @@ $('#data-menu').click(function(){
     if(activeConn == true){
         connNav.removeClass('in-right');
         connNav.addClass('out-right');
-        setTimeout(function(){dataNav.addClass('in-right');}, 250);
+        setTimeout(function(){viewDataNav.addClass('in-right');}, 250);
     }
     else if(activeData == true){
-        dataNav.removeClass('in-right');
-        dataNav.addClass('out-right');
+        viewDataNav.removeClass('in-right');
+        viewDataNav.addClass('out-right');
     }
     else{
-        dataNav.addClass('in-right');
+        viewDataNav.addClass('in-right');
+    }
+}
+
+$(".container").click(function(){
+    var activeNav = $('.side-nav.in-right');
+    if(activeNav != null){
+        activeNav.addClass("out-right");
+        activeNav.removeClass("in-right");
     }
 });
+
+function closeWindow(){
+    var window = remote.getCurrentWindow();
+    window.close();
+}
+function minimizeWindow(){
+    var window = remote.getCurrentWindow();
+    window.minimize();
+}
+
 /*  Side-nav Controls   */
 
 /*  Connection controls */

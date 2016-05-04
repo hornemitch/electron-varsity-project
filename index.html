@@ -15,8 +15,17 @@
                 <a href="#" id="connection-menu" class="menu-items"><h4>
                     Connection
                 </h4></a>
-                <a href="#" id="data-menu" class="menu-items"><h4>
-                    Data
+                <a href="#" class="menu-items" onclick="expandViewData()"><h4>
+                    View Data
+                </h4></a>
+                <a href="#" class="menu-items" onclick="expandEnterData()"><h4>
+                    Enter Data
+                </h4></a>
+                <a href="#" class="menu-items" onclick="minimizeWindow()"><h4>
+                    -
+                </h4></a>
+                <a href="#" class="menu-items" onclick="closeWindow()"><h4>
+                    X
                 </h4></a>
             </span>
         </navbar>
@@ -31,8 +40,17 @@
             <button class="button" onclick="disconnect()"><h4>Disconnect</h4></button>
         </div>
 
-        <div id="data-side-nav" class="out-right side-nav">
-            <h1>Database</h1>
+        <div id="view-data-side-nav" class="out-right side-nav">
+            <h1>View Tables</h1>
+            <ul>
+                <li><a href="#" class="database-links" onclick="ViewClinics()">Clinics</a></li>
+                <li><a href="#" class="database-links" onclick="ViewStaff()">Staff</a></li>
+                <li><a href="#" class="database-links" onclick="ViewOwners()">Owners</a></li>
+            </ul>
+        </div>
+
+        <div id="enter-data-side-nav" class="out-right side-nav">
+            <h1>Enter Data</h1>
             <ul>
                 <li><a href="#" class="database-links" onclick="ViewClinics()">Clinics</a></li>
                 <li><a href="#" class="database-links" onclick="ViewStaff()">Staff</a></li>
@@ -79,6 +97,23 @@
                     <table id="table" class="table-bordered">
 
                     </table>
+                </div>
+            </div>
+
+            <div id="data-enter-div" class="hide divs">
+                <div class="row">
+                    <h1 id="data-enter-heading"></h1>
+                </div>
+                <div class="row">
+                    <div id="column-1" class="col-md-4">
+
+                    </div>
+                    <div id="column-2" class="col-md-4">
+
+                    </div>
+                    <div id="column-3" class="col-md-4">
+
+                    </div>
                 </div>
             </div>
         </div>

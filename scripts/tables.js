@@ -7,18 +7,26 @@ function createClinicTable(){
     var head1 = document.createElement("th");
     var head2 = document.createElement("th");
     var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
 
-    var head1Text = document.createTextNode("Clinic ID");
-    var head2Text = document.createTextNode("Clinic City");
-    var head3Text = document.createTextNode("Clinic Telephone");
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("State");
+    var head3Text = document.createTextNode("City");
+    var head4Text = document.createTextNode("Telephone");
+    var head5Text = document.createTextNode("Fax");
 
     head1.appendChild(head1Text);
     head2.appendChild(head2Text);
     head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
 
     tRow.appendChild(head1);
     tRow.appendChild(head2);
     tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
 
     tBody.appendChild(tRow);
 
@@ -26,25 +34,33 @@ function createClinicTable(){
 
     return tBody;
 }
-function createClinicTableRow(id, city, tel){
+function createClinicTableRow(id, state, city, tel, fax){
     var tRow  = document.createElement("tr");
     var cell1 = document.createElement("td");
     var cell2 = document.createElement("td");
     var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var telephone = separateTelephone(tel);
 
     var cell1Text = document.createTextNode(id);
-    var cell2Text = document.createTextNode(city);
-    var telephone = separateTelephone(tel);
-    console.log(telephone);
-    var cell3Text = document.createTextNode(telephone);
+    var cell2Text = document.createTextNode(state);
+    var cell3Text = document.createTextNode(city);
+    var cell4Text = document.createTextNode(telephone);
+    var cell5Text = document.createTextNode(fax);
 
     cell1.appendChild(cell1Text);
     cell2.appendChild(cell2Text);
     cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
 
     tRow.appendChild(cell1);
     tRow.appendChild(cell2);
     tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
 
     return tRow;
 }
