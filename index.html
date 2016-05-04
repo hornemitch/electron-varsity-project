@@ -1,0 +1,93 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Database GUI</title>
+        <link rel="stylesheet" href="./static_assets/bootstrap/bootstrap.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Orbitron:400,700,900,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./styles/style.css"/>
+    </head>
+    <body onload="autoConnect()">
+        <navbar class="my-nav">
+            <span class="heading-span">
+                <h4><span class="name-span">CubeTron</span> - ITRW 311 Project</h4>
+            </span>
+            <span class="menu-span">
+                <a href="#" id="connection-menu" class="menu-items"><h4>
+                    Connection
+                </h4></a>
+                <a href="#" id="data-menu" class="menu-items"><h4>
+                    Data
+                </h4></a>
+            </span>
+        </navbar>
+
+        <div id="connection-side-nav" class="out-right side-nav">
+            <h1>Connection</h1>
+            <h3>IP Address:</h3>
+            <h4>127.0.0.1</h4>
+            <h3>User:</h3>
+            <h4>Root</h4>
+            <h3>Connected</h3>
+            <button class="button" onclick="disconnect()"><h4>Disconnect</h4></button>
+        </div>
+
+        <div id="data-side-nav" class="out-right side-nav">
+            <h1>Database</h1>
+            <ul>
+                <li><a href="#" class="database-links" onclick="ViewClinics()">Clinics</a></li>
+                <li><a href="#" class="database-links" onclick="ViewStaff()">Staff</a></li>
+                <li><a href="#" class="database-links" onclick="ViewOwners()">Owners</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div id="connect-div" class="show divs">
+                    <h1>Connect to Database</h1>
+                    <form id="connect-form">
+                        <div class="row">
+                            <h2>IP Address</h2>
+                            <input id="ip-input" type="text" placeholder="Enter IP Address"/>
+                            <h2>User Name</h2>
+                            <input id="user-input" type="text" placeholder="Enter User Name"/>
+                            <h2>Password</h2>
+                            <input id="pass-input" type="password" placeholder="Enter Password"/>
+                        </div>
+                        <div class="row">
+                            <input class="button" type="submit" value="Connect"/>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <button class="button" onclick="autoConnect()">Connect automatically</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id='main-div' class="hide divs">
+                    <div class="row">
+                        <img class="head-img" src="static_assets/imgs/Untitled-1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id='data-div' class="hide divs">
+                <div class="row">
+                    <h1 id="data-heading"></h1>
+                </div>
+                <div class="row centered">
+                    <table id="table" class="table-bordered">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script>window.$ = window.jQuery = require("./static_assets/jquery/jquery.min.js");</script>
+        <script src="./static_assets/bootstrap/bootstrap.min.js"></script>
+        <script src="scripts/server.js"></script>
+        <script src="scripts/client.js"></script>
+        <script src="scripts/database.js"></script>
+        <script src="scripts/tables.js"></script>
+    </body>
+</html>
