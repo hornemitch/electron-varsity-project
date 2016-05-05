@@ -1,67 +1,67 @@
-function enterClinic(){
+function showEnterClinic(){
 
 }
 
-function enterPen(){
+function showEnterPen(){
 
 }
 
-function enterStaff(){
+function showEnterStaff(){
 
 }
 
-function enterOwner(){
+function showEnterOwner(){
 
 }
 
-function enterPet(){
+function showEnterPet(){
 
 }
 
-function enterAppoint(){
+function showEnterAppoint(){
 
 }
 
-function enterExam(){
+function showEnterExam(){
 
 }
 
-function enterPetStay(){
+function showEnterPetStay(){
 
 }
 
-function enterPetTreat(){
+function showEnterPetTreat(){
 
 }
 
-function enterStayTreat(){
+function showEnterStayTreat(){
 
 }
 
-function enterInv(){
+function showEnterInv(){
 
 }
 
-function enterInvPay(){
+function showEnterInvPay(){
 
 }
 
-function enterNonSurg(){
+function showEnterNonSurg(){
 
 }
 
-function enterSurg(){
+function showEnterSurg(){
 
 }
 
-function enterPhar(){
+function showEnterPhar(){
 
 }
 
-function enterTreat(){
+function showEnterTreat(){
 
 }
 
-function enterTreatCost(){
+function showEnterTreatCost(){
 
 }
