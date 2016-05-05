@@ -30,8 +30,10 @@ $('#connection-menu').click(function(){
 
 function expandViewData(){
     var viewDataNav = $('#view-data-side-nav');
+    var enterDataNav = $('#enter-data-side-nav');
     var connNav = $('#connection-side-nav');
     var activeData = viewDataNav.hasClass('in-right');
+    var activeEnterData = enterDataNav.hasClass('in-right');
     var activeConn = connNav.hasClass('in-right');
 
     if(activeConn == true){
@@ -42,6 +44,11 @@ function expandViewData(){
     else if(activeData == true){
         viewDataNav.removeClass('in-right');
         viewDataNav.addClass('out-right');
+    }
+    else if(activeEnterData == true){
+        enterDataNav.removeClass('in-right');
+        enterDataNav.addClass('out-right');
+        setTimeout(function(){viewDataNav.addClass('in-right');}, 250);
     }
     else{
         viewDataNav.addClass('in-right');
@@ -50,21 +57,28 @@ function expandViewData(){
 
 function expandEnterData(){
     var viewDataNav = $('#view-data-side-nav');
+    var enterDataNav = $('#enter-data-side-nav');
     var connNav = $('#connection-side-nav');
-    var activeData = dataNav.hasClass('in-right');
+    var activeData = viewDataNav.hasClass('in-right');
+    var activeEnterData = enterDataNav.hasClass('in-right');
     var activeConn = connNav.hasClass('in-right');
 
     if(activeConn == true){
         connNav.removeClass('in-right');
         connNav.addClass('out-right');
-        setTimeout(function(){viewDataNav.addClass('in-right');}, 250);
+        setTimeout(function(){enterDataNav.addClass('in-right');}, 250);
+    }
+    else if(activeEnterData == true){
+        enterDataNav.removeClass('in-right');
+        enterDataNav.addClass('out-right');
     }
     else if(activeData == true){
         viewDataNav.removeClass('in-right');
         viewDataNav.addClass('out-right');
+        setTimeout(function(){enterDataNav.addClass('in-right');}, 250);
     }
     else{
-        viewDataNav.addClass('in-right');
+        enterDataNav.addClass('in-right');
     }
 }
 
