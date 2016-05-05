@@ -60,7 +60,40 @@ function createPen(){
 function showEnterStaff(){
     $('#data-enter-heading').html('Record Staff');
     readyForm();
-    createClinicForm();
+    createStaffForm();
+}
+function createStaff(){
+    alert('it works');
+
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+    var t9 = $('#t9').val();
+    var t10 = $('#t10').val();
+    var t11 = $('#t11').val();
+    var t12 = $('#t12').val();
+
+    connection.query("CALL `create_staff_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"','"+t9+"','"+t10+"','"+t11+"','"+t12+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('A Staff member has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterOwner(){
