@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./styles/style.css"/>
     </head>
     <body onload="autoConnect()">
-        <navbar class="my-nav">
+        <nav class="my-nav">
             <span class="heading-span">
                 <h4><span class="name-span">CubeTron</span> - ITRW 311 Project</h4>
             </span>
@@ -28,7 +28,7 @@
                     X
                 </h4></a>
             </span>
-        </navbar>
+        </nav>
 
         <div id="connection-side-nav" class="out-right side-nav">
             <h1>Connection</h1>
@@ -46,6 +46,8 @@
                 <li><a href="#" class="database-links" onclick="ViewClinics()">Clinics</a></li>
                 <li><a href="#" class="database-links" onclick="ViewStaff()">Staff</a></li>
                 <li><a href="#" class="database-links" onclick="ViewOwners()">Owners</a></li>
+
+                <li><a href="#" class="database-links" onclick="viewBackups()"><h2>Backups</h2></a></li>
             </ul>
         </div>
 
@@ -55,6 +57,7 @@
                 <li><a href="#" class="database-links" onclick="ViewClinics()">Clinics</a></li>
                 <li><a href="#" class="database-links" onclick="ViewStaff()">Staff</a></li>
                 <li><a href="#" class="database-links" onclick="ViewOwners()">Owners</a></li>
+
             </ul>
         </div>
 
@@ -94,9 +97,7 @@
                     <h1 id="data-heading"></h1>
                 </div>
                 <div class="row centered">
-                    <table id="table" class="table-bordered">
-
-                    </table>
+                    <table id="table" class="table-bordered"></table>
                 </div>
             </div>
 
