@@ -1,11 +1,48 @@
 var mysql = require('mysql');
 var connection;
 
+$('#connect-form').submit( function(event){
+    event.preventDefault();
+
+    var ipAddress = $('#ip-input').val();
+    var db        = $('#db-input').val();
+    var userName  = $('#user-input').val();
+    var password  = $('#pass-input').val();
+
+    connection = mysql.createConnection({
+        host    : ipAddress,
+        user    : userName,
+        password: password,
+        database: db
+    });
+
+    connection.connect(function(err) {
+        if(err){
+            alert('Connection Failure- \nPlease ensure that your login details are correct');
+        }
+        else {
+            alert('Successfully connected to MySQL database on port -' + ipAddress);
+
+            var curDiv = $('#connect-div');
+            curDiv.removeClass();
+            curDiv.addClass('hide');
+
+            var div = $('#main-div');
+            div.removeClass();
+            div.addClass('show');
+
+            $('#host-heading').html('IP Address: ' + ipAddress);
+            $('#user-heading').html('User Name : ' + userName);
+        }
+    });
+});
+
 function autoConnect(){
     connection = mysql.createConnection({
         host    : '127.0.0.1',
         user    : 'root',
-        password: 'Boondocks5'
+        password: 'Boondocks5',
+        database: 'pets4u'
     });
 
     var curDiv = $('.show');
@@ -28,7 +65,7 @@ function autoConnect(){
 }
 
 function disconnect(){
-    connection.end();
+    connection.destroy();
     alert("You are now disconnected");
 
     var connNav = $('#connection-side-nav');

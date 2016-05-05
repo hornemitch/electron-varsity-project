@@ -28,7 +28,7 @@ function ViewClinics(){
     var table3 = $('#table2');
     table3.empty();
 
-    connection.query("CALL `pets4u`.`read_clinics`('-1')", function(err,rows){
+    connection.query("CALL `read_clinics`('-1')", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -49,7 +49,7 @@ $(document).on('click', '.deleteClinic', function(){
     var mustDelete = confirm("Are you sure you want to delete this clinic?");
 
     if(mustDelete == true) {
-        connection.query("CALL `pets4u`.`delete_clinic`('" +this.id+"')", function (err) {
+        connection.query("CALL `delete_clinic`('" +this.id+"')", function (err) {
             if (err) {
                 alert('Bad shit went down : \n' + err.stack);
             }
@@ -57,7 +57,7 @@ $(document).on('click', '.deleteClinic', function(){
                 var curTable = $('#table');
                 curTable.empty();
 
-                connection.query("CALL `pets4u`.`read_clinics`('-1')", function(err,rows){
+                connection.query("CALL `read_clinics`('-1')", function(err,rows){
                     if (err) {
                         alert('Bad shit went down : \n' + err.stack);
                     }
@@ -108,7 +108,7 @@ function ViewStaff(){
     var table3 = $('#table2');
     table3.empty();
 
-    connection.query("CALL `pets4u`.`read_staff`('-1')", function(err,rows){
+    connection.query("CALL `read_staff`('-1')", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -129,7 +129,7 @@ $(document).on('click', '.deleteStaff', function(){
     var mustDelete = confirm("Are you sure you want to delete this Staff member?");
 
     if(mustDelete == true) {
-        connection.query("CALL `pets4u`.`delete_staff`('" +this.id+"')", function (err) {
+        connection.query("CALL `delete_staff`('" +this.id+"')", function (err) {
             if (err) {
                 alert('Bad shit went down : \n' + err.stack);
             }
@@ -137,7 +137,7 @@ $(document).on('click', '.deleteStaff', function(){
                 var curTable = $('#table');
                 curTable.empty();
 
-                connection.query("CALL `pets4u`.`read_staff`('-1')", function(err,rows){
+                connection.query("CALL `read_staff`('-1')", function(err,rows){
                     if (err) {
                         alert('Bad shit went down : \n' + err.stack);
                     }
@@ -188,7 +188,7 @@ function ViewOwners(){
     var table3 = $('#table2');
     table3.empty();
 
-    connection.query("CALL `pets4u`.`read_owners`('-1')", function(err,rows){
+    connection.query("CALL `read_owners`('-1')", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -209,7 +209,7 @@ $(document).on('click', '.deleteOwner', function(){
     var mustDelete = confirm("Are you sure you want to delete this owner?");
 
     if(mustDelete == true) {
-        connection.query("CALL `pets4u`.`delete_owner`('" +this.id+"')", function (err) {
+        connection.query("CALL `delete_owner`('" +this.id+"')", function (err) {
             if (err) {
                 alert('Bad shit went down : \n' + err.stack);
             }
@@ -217,7 +217,7 @@ $(document).on('click', '.deleteOwner', function(){
                 var curTable = $('#table');
                 curTable.empty();
 
-                connection.query("CALL `pets4u`.`read_owners`('-1')", function(err,rows){
+                connection.query("CALL `read_owners`('-1')", function(err,rows){
                     if (err) {
                         alert('Bad shit went down : \n' + err.stack);
                     }
@@ -268,7 +268,7 @@ function viewBackups(){
     var table3 = $('#table2');
     table3.empty();
 
-    connection.query("CALL `pets4u`.`view_backup_Clinics`()", function(err,rows){
+    connection.query("CALL `view_backup_Clinics`()", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -284,7 +284,7 @@ function viewBackups(){
             }
         }
     });
-    connection.query("CALL `pets4u`.`view_backup_owners`()", function(err,rows){
+    connection.query("CALL `view_backup_owners`()", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -300,7 +300,7 @@ function viewBackups(){
             }
         }
     });
-    connection.query("CALL `pets4u`.`view_backup_petss`()", function(err,rows){
+    connection.query("CALL `view_backup_petss`()", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }

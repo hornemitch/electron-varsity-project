@@ -43,18 +43,23 @@ function createClinicForm(){
     textBox2.type = 'text';
     textBox2.placeholder = 'Enter City';
     textBox2.id = 't2';
-    textBox3.type = 'text';
+    textBox3.type = 'number';
     textBox3.placeholder = 'Enter ZIP Code';
     textBox3.id = 't3';
     textBox4.type = 'text';
     textBox4.placeholder = 'Enter Street';
     textBox4.id = 't4';
-    textBox5.type = 'text';
+    textBox5.type = 'number';
     textBox5.placeholder = 'Enter Telephone Number';
     textBox5.id = 't5';
-    textBox6.type = 'text';
+    textBox6.type = 'number';
     textBox6.placeholder = 'Enter Fax Number';
     textBox6.id = 't6';
+
+    var submitButton = document.createElement('button');
+    submitButton.onclick = 'function(){$(form).submit(createClinic());}';
+    submitButton.innerHTML = 'Create Clinic';
+    submitButton.className = 'button';
 
     column1.appendChild(head1);
     column1.appendChild(textBox1);
@@ -74,4 +79,5 @@ function createClinicForm(){
     form.appendChild(column1);
     form.appendChild(column2);
     form.appendChild(column3);
+    form.appendChild(submitButton);
 }

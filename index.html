@@ -88,6 +88,8 @@
                         <div class="row">
                             <h2>IP Address</h2>
                             <input id="ip-input" type="text" placeholder="Enter IP Address"/>
+                            <h2>Database</h2>
+                            <input id="db-input" type="text" placeholder="Enter Database Name"/>
                             <h2>User Name</h2>
                             <input id="user-input" type="text" placeholder="Enter User Name"/>
                             <h2>Password</h2>
@@ -134,7 +136,7 @@
                     <h1 id="data-enter-heading"></h1>
                 </div>
                 <div class="row">
-                    <form id="enterForm">
+                    <form id="enterForm" onSubmit='createClinic()'>
                     </form>
                 </div>
             </div>
