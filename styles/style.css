@@ -140,6 +140,10 @@ ul{
     padding: 10px;
 }
 
+.side-nav h3{
+    text-align: center;
+}
+
 .database-links{
     color: #222;
     font-size: 20px;
@@ -200,6 +204,17 @@ ul{
     text-align: left;
 }
 #enterForm input{
+    font-size: 20px;
+    text-align: center;
+    width:90%;
+}
+#enterForm TextArea{
+     font-size: 20px;
+    overflow-y: scroll;
+     text-align: center;
+     width:90%;
+ }
+#enterForm select{
     font-size: 20px;
     text-align: center;
     width:90%;
