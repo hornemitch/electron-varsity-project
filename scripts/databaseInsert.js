@@ -63,8 +63,6 @@ function showEnterStaff(){
     createStaffForm();
 }
 function createStaff(){
-    alert('it works');
-
     var t1 = $('#t1').val();
     var t2 = $('#t2').val();
     var t3 = $('#t3').val();
@@ -99,85 +97,460 @@ function createStaff(){
 function showEnterOwner(){
     $('#data-enter-heading').html('Record an Owner');
     readyForm();
-    createClinicForm();
+    createOwnerForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterPet(){
     $('#data-enter-heading').html('Record a Pet');
     readyForm();
-    createClinicForm();
+    createPetForm();
+}
+function createPet(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+
+    connection.query("CALL `create_pet_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','0', '"+t5+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('A pet has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterAppoint(){
     $('#data-enter-heading').html('Record an Appointment');
     readyForm();
-    createClinicForm();
+    createAppointForm();
+}
+function createAppoint(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterExam(){
     $('#data-enter-heading').html('Record an Examination');
     readyForm();
-    createClinicForm();
+    createExamForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterPetStay(){
     $('#data-enter-heading').html("Record a Pet's Stay");
     readyForm();
-    createClinicForm();
+    createPetStayForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterPetTreat(){
     $('#data-enter-heading').html("Record a Pet's Treatment");
     readyForm();
-    createClinicForm();
+    createPetTreatForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterStayTreat(){
     $('#data-enter-heading').html('Record a Stay Treatment Procedure');
     readyForm();
-    createClinicForm();
+    createStayTreatForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterInv(){
     $('#data-enter-heading').html('Record an Invoice');
     readyForm();
-    createClinicForm();
+    createInvForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterInvPay(){
     $('#data-enter-heading').html('Record an Invoice Payment');
     readyForm();
-    createClinicForm();
+    createInvPayForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterNonSurg(){
     $('#data-enter-heading').html('Record Non-Surgical Supplies');
     readyForm();
-    createClinicForm();
+    createNonSurgForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterSurg(){
     $('#data-enter-heading').html('Record Surgical Supplies');
     readyForm();
-    createClinicForm();
+    createSurgForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterPhar(){
     $('#data-enter-heading').html('Record Pharmaceutical Supplies');
     readyForm();
-    createClinicForm();
+    createPharForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterTreat(){
     $('#data-enter-heading').html('Record a Treatment');
     readyForm();
-    createClinicForm();
+    createTreatForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function showEnterTreatCost(){
     $('#data-enter-heading').html('Record a Treatment Cost');
     readyForm();
-    createClinicForm();
+    createTreatCostForm();
+}
+function createOwner(){
+    var t1 = $('#t1').val();
+    var t2 = $('#t2').val();
+    var t3 = $('#t3').val();
+    var t4 = $('#t4').val();
+    var t5 = $('#t5').val();
+    var t6 = $('#t6').val();
+    var t7 = $('#t7').val();
+    var t8 = $('#t8').val();
+
+    connection.query("CALL `create_Owner_records`('"+t1+"','"+t2+"','"+t3+"','"+t4+"','"+t5+"','"+t6+"','"+t7+"','"+t8+"')", function(err){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            alert('An owner has been added');
+
+            var myDiv = $('#data-enter-div');
+            myDiv.removeClass('show');
+            myDiv.addClass('hide');
+
+            var mainDiv = $('#main-div');
+            mainDiv.removeClass('hide');
+            mainDiv.addClass('show');
+        }
+    });
 }
 
 function readyForm(){
