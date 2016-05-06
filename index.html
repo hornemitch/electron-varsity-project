@@ -15,10 +15,10 @@
                 <a href="#" id="connection-menu" class="menu-items"><h4>
                     Connection
                 </h4></a>
-                <a href="#" class="menu-items" onclick="expandViewData()"><h4>
+                <a href="#" class="hide menu-items connected-menu-items" onclick="expandViewData()"><h4>
                     View Data
                 </h4></a>
-                <a href="#" class="menu-items" onclick="expandEnterData()"><h4>
+                <a href="#" class="hide menu-items connected-menu-items" onclick="expandEnterData()"><h4>
                     Enter Data
                 </h4></a>
                 <a href="#" class="menu-items" onclick="minimizeWindow()"><h4>
@@ -31,13 +31,20 @@
         </nav>
 
         <div id="connection-side-nav" class="out-right side-nav">
-            <h1>Connection</h1>
-            <h3>IP Address:</h3>
-            <h4>127.0.0.1</h4>
-            <h3>User:</h3>
-            <h4>Root</h4>
-            <h3>Connected</h3>
-            <button class="button" onclick="disconnect()"><h4>Disconnect</h4></button>
+            <div id="no-conn-div">
+                <h1>No Connection</h1>
+            </div>
+            <div id="is-conn-div" class="hide">
+                <h1>Connection</h1>
+                <h3>IP Address:</h3>
+                <h4 id="ip-address-show"></h4>
+                <h3>Database:</h3>
+                <h4 id="db-show"></h4>
+                <h3>User:</h3>
+                <h4 id="db-user-show"></h4>
+                <h3>Connected</h3>
+                <button class="button" onclick="disconnect()"><h4>Disconnect</h4></button>
+            </div>
         </div>
 
         <div id="view-data-side-nav" class="out-right side-nav">

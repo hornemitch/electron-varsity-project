@@ -33,6 +33,15 @@ $('#connect-form').submit( function(event){
 
             $('#host-heading').html('IP Address: ' + ipAddress);
             $('#user-heading').html('User Name : ' + userName);
+
+            $('#no-conn-div').addClass('hide');
+            $('#is-conn-div').removeClass('hide');
+
+            $('#ip-address-show').html(ipAddress);
+            $('#db-show').html(db);
+            $('#db-user-show').html(userName);
+
+            $('.connected-menu-items').removeClass('hide');
         }
     });
 });
@@ -60,6 +69,15 @@ function autoConnect(){
         else {
             var curDiv = $('.show');
             curDiv.addClass('hide');
+
+            $('#no-conn-div').addClass('hide');
+            $('#is-conn-div').removeClass('hide');
+
+            $('#ip-address-show').html('127.0.0.1');
+            $('#db-show').html('pets4u');
+            $('#db-user-show').html('root');
+
+            $('.connected-menu-items').removeClass('hide');
         }
     });
 }
@@ -78,6 +96,11 @@ function disconnect(){
 
     connNav.removeClass('in-right');
     connNav.addClass('out-right');
+
+    $('#is-conn-div').addClass('hide');
+    $('#no-conn-div').removeClass('hide');
+
+    $('.connected-menu-items').addClass('hide');
 }
 
 $('#add-owner').click(function(){
