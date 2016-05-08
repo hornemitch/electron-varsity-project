@@ -1149,3 +1149,195 @@ function reportPetsPerType(){
         }
     });
 }
+
+function reportStaffAge(){
+    $('#data-heading').html('Report of Staff Members over 50');
+
+    var dataNav = $('#view-data-side-nav');
+    dataNav.removeClass('in-right');
+    dataNav.addClass('out-right');
+
+    var curDiv = $('.show');
+    var clinicDiv = $('#data-div');
+
+    curDiv.removeClass('show');
+    curDiv.addClass('hide');
+
+    clinicDiv.removeClass('hide');
+    clinicDiv.addClass('show');
+
+    var table1Head = $("#table1Head");
+    table1Head.empty();
+    var table2Head = $("#table2Head");
+    table2Head.empty();
+    var table3Head = $("#table3Head");
+    table3Head.empty();
+
+    var curTable = $('#table');
+    curTable.empty();
+    var table2 = $('#table1');
+    table2.empty();
+    var table3 = $('#table2');
+    table3.empty();
+
+    connection.query("CALL `report_staff_age`()", function(err,rows){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            var table = createStaffAgeReportTable();
+            for (var c = 0; c <= rows[0].length; c++) {
+                console.log(rows[0][c]);
+
+                var result = rows[0][c];
+                var newRow = createStaffAgeReportTableRow(result.STAFF_ID, result.STAFF_NAME,result.STAFF_POSITION,result.AGE);
+
+                table.appendChild(newRow);
+            }
+        }
+    });
+}
+
+function reportStaffSalary(){
+    $('#data-heading').html('Report of Total Monthly Salaries Per Clinic');
+
+    var dataNav = $('#view-data-side-nav');
+    dataNav.removeClass('in-right');
+    dataNav.addClass('out-right');
+
+    var curDiv = $('.show');
+    var clinicDiv = $('#data-div');
+
+    curDiv.removeClass('show');
+    curDiv.addClass('hide');
+
+    clinicDiv.removeClass('hide');
+    clinicDiv.addClass('show');
+
+    var table1Head = $("#table1Head");
+    table1Head.empty();
+    var table2Head = $("#table2Head");
+    table2Head.empty();
+    var table3Head = $("#table3Head");
+    table3Head.empty();
+
+    var curTable = $('#table');
+    curTable.empty();
+    var table2 = $('#table1');
+    table2.empty();
+    var table3 = $('#table2');
+    table3.empty();
+
+    connection.query("CALL `report_staff_salary`()", function(err,rows){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            var table = createStaffSalaryReportTable();
+            for (var c = 0; c <= rows[0].length; c++) {
+                console.log(rows[0][c]);
+
+                var result = rows[0][c];
+                var newRow = createStaffSalaryReportTableRow(result.CLINIC_ID, result.Total_monthly_salary_per_clinic);
+
+                table.appendChild(newRow);
+            }
+        }
+    });
+}
+
+function reportSuppliesOnHandCost(){
+    $('#data-heading').html('Report of the value of Supplies on Hand');
+
+    var dataNav = $('#view-data-side-nav');
+    dataNav.removeClass('in-right');
+    dataNav.addClass('out-right');
+
+    var curDiv = $('.show');
+    var clinicDiv = $('#data-div');
+
+    curDiv.removeClass('show');
+    curDiv.addClass('hide');
+
+    clinicDiv.removeClass('hide');
+    clinicDiv.addClass('show');
+
+    var table1Head = $("#table1Head");
+    table1Head.empty();
+    var table2Head = $("#table2Head");
+    table2Head.empty();
+    var table3Head = $("#table3Head");
+    table3Head.empty();
+
+    var curTable = $('#table');
+    curTable.empty();
+    var table2 = $('#table1');
+    table2.empty();
+    var table3 = $('#table2');
+    table3.empty();
+
+    connection.query("CALL `report_supplies_on_hand_cost`()", function(err,rows){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            var table = createSupplyCostReportTable();
+            for (var c = 0; c <= rows[0].length; c++) {
+                console.log(rows[0][c]);
+
+                var result = rows[0][c];
+                var newRow = createSupplyCostReportTableRow(result.ID, result.SURGICAL_TOTAL,result.NON_SURGICAL_TOTAL);
+
+                table.appendChild(newRow);
+            }
+        }
+    });
+}
+
+function reportSuppliesReOrder(){
+    $('#data-heading').html('Report of the value of Supplies on Hand');
+
+    var dataNav = $('#view-data-side-nav');
+    dataNav.removeClass('in-right');
+    dataNav.addClass('out-right');
+
+    var curDiv = $('.show');
+    var clinicDiv = $('#data-div');
+
+    curDiv.removeClass('show');
+    curDiv.addClass('hide');
+
+    clinicDiv.removeClass('hide');
+    clinicDiv.addClass('show');
+
+    var table1Head = $("#table1Head");
+    table1Head.empty();
+    var table2Head = $("#table2Head");
+    table2Head.empty();
+    var table3Head = $("#table3Head");
+    table3Head.empty();
+
+    var curTable = $('#table');
+    curTable.empty();
+    var table2 = $('#table1');
+    table2.empty();
+    var table3 = $('#table2');
+    table3.empty();
+
+    connection.query("CALL `report_supplies_to_reorder_clinic`()", function(err,rows){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            var table = createSupplyReOrderReportTable();
+            for (var c = 0; c <= rows[0].length; c++) {
+                console.log(rows[0][c]);
+
+                var result = rows[0][c];
+                var newRow = createSupplyReOrderReportTableRow(result.CLINIC_ID, result.SUPP_ID,result.SUPP_NAME,result.SUPP_QUANTITY,result.SUPP_RE_LEVEL);
+
+                table.appendChild(newRow);
+            }
+        }
+    });
+}

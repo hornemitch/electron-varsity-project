@@ -1492,3 +1492,223 @@ function createPetTypeReportTableRow(type, number){
     
     return tRow;
 }
+
+
+function createStaffAgeReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Position");
+    var head4Text = document.createTextNode("Age");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createStaffAgeReportTableRow(id, name, position, age){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(position);
+    var cell4Text = document.createTextNode(age);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    
+    return tRow;
+}
+
+function createStaffSalaryReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Total Monthly Salary For All Staff");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createStaffSalaryReportTableRow(id, salary){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+
+    salary = 'R '+salary;
+        
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(salary);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
+
+function createSupplyCostReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Value of Surgical Supplies on Hand");
+    var head3Text = document.createTextNode("Value of Non-Surgical Supplies on Hand");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createSupplyCostReportTableRow(id, surgical, nonsurgical){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    
+    surgical = 'R '+surgical;
+    nonsurgical = 'R '+nonsurgical;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(surgical);
+    var cell3Text = document.createTextNode(nonsurgical);
+      
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    
+    return tRow;
+}
+
+
+
+function createSupplyReOrderReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+    
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Supply ID");
+    var head3Text = document.createTextNode("Name");
+    var head4Text = document.createTextNode("Supply Quantity");
+    var head5Text = document.createTextNode("Re-Order Level");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createSupplyReOrderReportTableRow(clinicid, suppid, name, quantity, relevel){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(clinicid);
+    var cell2Text = document.createTextNode(suppid);
+    var cell3Text = document.createTextNode(name);
+    var cell4Text = document.createTextNode(quantity);
+    var cell5Text = document.createTextNode(relevel);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+    
+    return tRow;
+}
