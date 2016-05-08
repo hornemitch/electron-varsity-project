@@ -1408,3 +1408,87 @@ function createOwnersPetsReportTableRow(id, fname, lname, petname, pettype, petd
 
     return tRow;
 }
+
+
+function createClinicPensReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Number of Pens");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createClinicPensReportTableRow(id, numpens){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(numpens);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
+
+
+function createPetTypeReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Pet Type");
+    var head2Text = document.createTextNode("Number of Pets");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPetTypeReportTableRow(type, number){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(type);
+    var cell2Text = document.createTextNode(number);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
