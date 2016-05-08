@@ -1146,3 +1146,131 @@ function shortdate(date){
     var newdate = ''+date;
     return newdate.substr(0,15)
 }
+
+
+
+
+
+
+
+
+
+
+function createManagerReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("State");
+    var head3Text = document.createTextNode("City");
+    var head4Text = document.createTextNode("Staff ID");
+    var head5Text = document.createTextNode("Manager Name");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createManagerReportTableRow(id, state, city, staffid, name){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(state);
+    var cell3Text = document.createTextNode(city);
+    var cell4Text = document.createTextNode(staffid);
+    var cell5Text = document.createTextNode(name);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+
+function createTreatmentCostReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("Minimum Treatment Cost");
+    var head2Text = document.createTextNode("Maximum Treatment Cost");
+    var head3Text = document.createTextNode("Average Treatment Cost");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createTreatmentCostReportTableRow(mincost, maxcost, avgcost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+
+    mincost = 'R'+mincost;
+    maxcost = 'R'+maxcost;
+    avgcost = 'R'+avgcost;
+
+    var cell1Text = document.createTextNode(mincost);
+    var cell2Text = document.createTextNode(maxcost);
+    var cell3Text = document.createTextNode(avgcost);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+ 
+    return tRow;
+}
