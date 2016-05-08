@@ -1274,3 +1274,77 @@ function createTreatmentCostReportTableRow(mincost, maxcost, avgcost){
  
     return tRow;
 }
+
+
+function createOwnersPetsReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+    var head6 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Owner ID");
+    var head2Text = document.createTextNode("Owner First Name");
+    var head3Text = document.createTextNode("Owner Last Name");
+    var head4Text = document.createTextNode("Pet Name");
+    var head5Text = document.createTextNode("Pet Type");
+    var head6Text = document.createTextNode("Pet Description");
+
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+    head6.appendChild(head6Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+    tRow.appendChild(head6);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createOwnersPetsReportTableRow(id, fname, lname, petname, pettype, petdesc){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    var cell6 = document.createElement("td");
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(fname);
+    var cell3Text = document.createTextNode(lname);
+    var cell4Text = document.createTextNode(petname);
+    var cell5Text = document.createTextNode(pettype);
+    var cell6Text = document.createTextNode(petdesc);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+    cell6.appendChild(cell6Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+    tRow.appendChild(cell6);
+
+    return tRow;
+}
