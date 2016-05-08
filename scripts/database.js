@@ -300,7 +300,7 @@ function viewBackups(){
             }
         }
     });
-    connection.query("CALL `view_backup_petss`()", function(err,rows){
+    connection.query("CALL `read_staff_backups`(-1)", function(err,rows){
         if (err) {
             alert('Bad shit went down : \n' + err.stack);
         }
@@ -514,6 +514,54 @@ function ViewInvoices(){
 
                 var result = rows[0][c];
                 var newRow = createInvoiceTableRow(result.INV_ID, result.INV_DATE, result.INV_TREAT_COST, result.PET_ID);
+
+                table.appendChild(newRow);
+            }
+        }
+    });
+}
+
+function ViewInvoicePayments(){
+    $('#data-heading').html('View Invoice Payments');
+
+    var dataNav = $('#view-data-side-nav');
+    dataNav.removeClass('in-right');
+    dataNav.addClass('out-right');
+
+    var curDiv = $('.show');
+    var clinicDiv = $('#data-div');
+
+    curDiv.removeClass('show');
+    curDiv.addClass('hide');
+
+    clinicDiv.removeClass('hide');
+    clinicDiv.addClass('show');
+
+    var table1Head = $("#table1Head");
+    table1Head.empty();
+    var table2Head = $("#table2Head");
+    table2Head.empty();
+    var table3Head = $("#table3Head");
+    table3Head.empty();
+
+    var curTable = $('#table');
+    curTable.empty();
+    var table2 = $('#table1');
+    table2.empty();
+    var table3 = $('#table2');
+    table3.empty();
+
+    connection.query("CALL `read_invoice_payments`('-1')", function(err,rows){
+        if (err) {
+            alert('Bad shit went down : \n' + err.stack);
+        }
+        else {
+            var table = createInvoicePaymentTable();
+            for (var c = 0; c <= rows[0].length; c++) {
+                console.log(rows[0][c]);
+
+                var result = rows[0][c];
+                var newRow = createInvoicePaymentTableRow(result.PAY_ID, result.PAY_METHOD, result.PAY_DATE, result.INV_ID);
 
                 table.appendChild(newRow);
             }

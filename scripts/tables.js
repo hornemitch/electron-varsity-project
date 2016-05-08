@@ -686,6 +686,66 @@ function createInvoiceTableRow(id, date, cost, petid){
     return tRow;
 }
 
+function createInvoicePaymentTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Payment Method");
+    var head3Text = document.createTextNode("Date");
+    var head4Text = document.createTextNode("Invoice ID");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createInvoicePaymentTableRow(id, paymethod, date, invid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+    var shorttime = shortdate(date);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(paymethod);
+    var cell3Text = document.createTextNode(shorttime);
+    var cell4Text = document.createTextNode(invid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+
 function createPenTable(){
     var table = document.getElementById('table');
 
