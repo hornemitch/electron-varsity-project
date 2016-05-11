@@ -50,8 +50,8 @@ function autoConnect(){
     connection = mysql.createConnection({
         host    : '127.0.0.1',
         user    : 'root',
-        password: 'Boondocks5',
-        database: 'pets4u'
+        password: 'root',
+        database: 'mypet'
     });
 
     var curDiv = $('.show');

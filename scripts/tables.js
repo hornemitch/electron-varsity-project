@@ -430,3 +430,1285 @@ function separateTelephone(telNum){
     var telephone = '' + telNum;
     return telephone.substr(0, 3) + '-' + telephone.substr(3, 3) + '-' + telephone.substr(6,4)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function createPetTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Type");
+    var head4Text = document.createTextNode("Description");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+ 
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPetTableRow(id, name, type, description){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(type);
+    var cell4Text = document.createTextNode(description);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+function createAppointmentTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Time");
+    var head3Text = document.createTextNode("Pet ID");
+    var head4Text = document.createTextNode("Clinic ID");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createAppointmentTableRow(id, time, petid, clinicid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+    var shorttime = shortdate(time);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(shorttime);
+    var cell3Text = document.createTextNode(petid);
+    var cell4Text = document.createTextNode(clinicid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+function createExaminationTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Time");
+    var head3Text = document.createTextNode("Description");
+    var head4Text = document.createTextNode("Pet ID");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createExaminationTableRow(id, time, desc, petid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+    var shorttime = shortdate(time);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(shorttime);
+    var cell3Text = document.createTextNode(desc);
+    var cell4Text = document.createTextNode(petid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+function createInvoiceTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Date");
+    var head3Text = document.createTextNode("Treatment Cost");
+    var head4Text = document.createTextNode("Pet ID");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createInvoiceTableRow(id, date, cost, petid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+    var shorttime = shortdate(date);
+    cost = 'R'+cost;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(shorttime);
+    var cell3Text = document.createTextNode(cost);
+    var cell4Text = document.createTextNode(petid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+function createInvoicePaymentTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Payment Method");
+    var head3Text = document.createTextNode("Date");
+    var head4Text = document.createTextNode("Invoice ID");
+ 
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+ 
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createInvoicePaymentTableRow(id, paymethod, date, invid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+
+    var shorttime = shortdate(date);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(paymethod);
+    var cell3Text = document.createTextNode(shorttime);
+    var cell4Text = document.createTextNode(invid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+
+    return tRow;
+}
+
+
+function createPenTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Capacity");
+    var head3Text = document.createTextNode("Status");
+    var head4Text = document.createTextNode("Comments");
+    var head5Text = document.createTextNode("Clinic ID");
+
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPenTableRow(id, capacity, status, comments, clinicid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(capacity);
+    var cell3Text = document.createTextNode(status);
+    var cell4Text = document.createTextNode(comments);
+    var cell5Text = document.createTextNode(clinicid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+
+    return tRow;
+}
+
+function createPetStayTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Stay From");
+    var head3Text = document.createTextNode("Stay To");
+    var head4Text = document.createTextNode("Pet ID");
+    var head5Text = document.createTextNode("Clinic ID");
+
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPetStayTableRow(id, begin, end, petid, penid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    shortbegin = shortdate(begin);
+    shortend = shortdate(end);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(shortbegin);
+    var cell3Text = document.createTextNode(shortend);
+    var cell4Text = document.createTextNode(petid);
+    var cell5Text = document.createTextNode(penid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+
+    return tRow;
+}
+
+function createPetTreatmentTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Stay From");
+    var head3Text = document.createTextNode("Stay To");
+    var head4Text = document.createTextNode("Comments");
+    var head5Text = document.createTextNode("Examination ID");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPetTreatmentTableRow(id, begin, end, comments, examid){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    shortbegin = shortdate(begin);
+    shortend = shortdate(end);
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(shortbegin);
+    var cell3Text = document.createTextNode(shortend);
+    var cell4Text = document.createTextNode(comments);
+    var cell5Text = document.createTextNode(examid);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+function createNon_SurgicalTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Description");
+    var head4Text = document.createTextNode("Quantity On Hand");
+    var head5Text = document.createTextNode("Restock Cost");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createNon_SurgicalTableRow(id, name, desc, quant, cost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cost = 'R'+cost;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(desc);
+    var cell4Text = document.createTextNode(quant);
+    var cell5Text = document.createTextNode(cost);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+function createPharmaceuticalTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Description");
+    var head4Text = document.createTextNode("Quantity On Hand");
+    var head5Text = document.createTextNode("Restock Cost");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPharmaceuticalTableRow(id, name, desc, quant, cost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cost = 'R'+cost;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(desc);
+    var cell4Text = document.createTextNode(quant);
+    var cell5Text = document.createTextNode(cost);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+function createSurgicalTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Description");
+    var head4Text = document.createTextNode("Quantity On Hand");
+    var head5Text = document.createTextNode("Restock Cost");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createSurgicalTableRow(id, name, desc, quant, cost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cost = 'R'+cost;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(desc);
+    var cell4Text = document.createTextNode(quant);
+    var cell5Text = document.createTextNode(cost);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+
+function createTreatmentsTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+   
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Description");
+    var head3Text = document.createTextNode("Cost");
+
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+   
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createTreatmentsTableRow(id, desc, cost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+
+    var cost = 'R'+cost;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(desc);
+    var cell3Text = document.createTextNode(cost);
+ 
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+ 
+    return tRow;
+}
+
+
+function shortdate(date){
+    var newdate = ''+date;
+    return newdate.substr(0,15)
+}
+
+
+
+
+
+
+
+
+
+
+function createManagerReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("State");
+    var head3Text = document.createTextNode("City");
+    var head4Text = document.createTextNode("Staff ID");
+    var head5Text = document.createTextNode("Manager Name");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createManagerReportTableRow(id, state, city, staffid, name){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(state);
+    var cell3Text = document.createTextNode(city);
+    var cell4Text = document.createTextNode(staffid);
+    var cell5Text = document.createTextNode(name);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+ 
+    return tRow;
+}
+
+
+function createTreatmentCostReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("Minimum Treatment Cost");
+    var head2Text = document.createTextNode("Maximum Treatment Cost");
+    var head3Text = document.createTextNode("Average Treatment Cost");
+  
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+  
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createTreatmentCostReportTableRow(mincost, maxcost, avgcost){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+
+    mincost = 'R'+mincost;
+    maxcost = 'R'+maxcost;
+    avgcost = 'R'+avgcost;
+
+    var cell1Text = document.createTextNode(mincost);
+    var cell2Text = document.createTextNode(maxcost);
+    var cell3Text = document.createTextNode(avgcost);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+ 
+    return tRow;
+}
+
+
+function createOwnersPetsReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+    var head6 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Owner ID");
+    var head2Text = document.createTextNode("Owner First Name");
+    var head3Text = document.createTextNode("Owner Last Name");
+    var head4Text = document.createTextNode("Pet Name");
+    var head5Text = document.createTextNode("Pet Type");
+    var head6Text = document.createTextNode("Pet Description");
+
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+    head6.appendChild(head6Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+    tRow.appendChild(head6);
+  
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createOwnersPetsReportTableRow(id, fname, lname, petname, pettype, petdesc){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    var cell6 = document.createElement("td");
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(fname);
+    var cell3Text = document.createTextNode(lname);
+    var cell4Text = document.createTextNode(petname);
+    var cell5Text = document.createTextNode(pettype);
+    var cell6Text = document.createTextNode(petdesc);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+    cell6.appendChild(cell6Text);
+ 
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+    tRow.appendChild(cell6);
+
+    return tRow;
+}
+
+
+function createClinicPensReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Number of Pens");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createClinicPensReportTableRow(id, numpens){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(numpens);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
+
+
+function createPetTypeReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Pet Type");
+    var head2Text = document.createTextNode("Number of Pets");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createPetTypeReportTableRow(type, number){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(type);
+    var cell2Text = document.createTextNode(number);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
+
+
+function createStaffAgeReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+  
+    var head1Text = document.createTextNode("ID");
+    var head2Text = document.createTextNode("Name");
+    var head3Text = document.createTextNode("Position");
+    var head4Text = document.createTextNode("Age");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createStaffAgeReportTableRow(id, name, position, age){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(name);
+    var cell3Text = document.createTextNode(position);
+    var cell4Text = document.createTextNode(age);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    
+    return tRow;
+}
+
+function createStaffSalaryReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Total Monthly Salary For All Staff");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createStaffSalaryReportTableRow(id, salary){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+
+    salary = 'R '+salary;
+        
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(salary);
+
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    
+    return tRow;
+}
+
+function createSupplyCostReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Value of Surgical Supplies on Hand");
+    var head3Text = document.createTextNode("Value of Non-Surgical Supplies on Hand");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createSupplyCostReportTableRow(id, surgical, nonsurgical){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    
+    surgical = 'R '+surgical;
+    nonsurgical = 'R '+nonsurgical;
+
+    var cell1Text = document.createTextNode(id);
+    var cell2Text = document.createTextNode(surgical);
+    var cell3Text = document.createTextNode(nonsurgical);
+      
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    
+    return tRow;
+}
+
+
+
+function createSupplyReOrderReportTable(){
+    var table = document.getElementById('table');
+
+    var tBody= document.createElement("tbody");
+
+    var tRow  = document.createElement("tr");
+    var head1 = document.createElement("th");
+    var head2 = document.createElement("th");
+    var head3 = document.createElement("th");
+    var head4 = document.createElement("th");
+    var head5 = document.createElement("th");
+    
+    var head1Text = document.createTextNode("Clinic ID");
+    var head2Text = document.createTextNode("Supply ID");
+    var head3Text = document.createTextNode("Name");
+    var head4Text = document.createTextNode("Supply Quantity");
+    var head5Text = document.createTextNode("Re-Order Level");
+    
+    head1.appendChild(head1Text);
+    head2.appendChild(head2Text);
+    head3.appendChild(head3Text);
+    head4.appendChild(head4Text);
+    head5.appendChild(head5Text);
+    
+    tRow.appendChild(head1);
+    tRow.appendChild(head2);
+    tRow.appendChild(head3);
+    tRow.appendChild(head4);
+    tRow.appendChild(head5);
+    
+    tBody.appendChild(tRow);
+
+    table.appendChild(tBody);
+
+    return tBody;
+}
+function createSupplyReOrderReportTableRow(clinicid, suppid, name, quantity, relevel){
+    var tRow  = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    
+    var cell1Text = document.createTextNode(clinicid);
+    var cell2Text = document.createTextNode(suppid);
+    var cell3Text = document.createTextNode(name);
+    var cell4Text = document.createTextNode(quantity);
+    var cell5Text = document.createTextNode(relevel);
+    
+    cell1.appendChild(cell1Text);
+    cell2.appendChild(cell2Text);
+    cell3.appendChild(cell3Text);
+    cell4.appendChild(cell4Text);
+    cell5.appendChild(cell5Text);
+    
+    tRow.appendChild(cell1);
+    tRow.appendChild(cell2);
+    tRow.appendChild(cell3);
+    tRow.appendChild(cell4);
+    tRow.appendChild(cell5);
+    
+    return tRow;
+}
